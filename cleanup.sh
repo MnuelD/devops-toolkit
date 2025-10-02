@@ -5,7 +5,12 @@ echo "======================================================"
 echo " Script de Limpeza da VM - DevOps Toolkit "
 echo "======================================================"
 echo
-read -p "Deseja realmente limpar TUDO da máquina (containers, imagens, Nginx, apps antigas)? [y/N]: " confirm
+
+if [[ "${CI}" == "true" ]]; then
+    confirm="y"
+else
+    read -p "Deseja realmente limpar TUDO da máquina (containers, imagens, Nginx, apps antigas)? [y/N]: " confirm
+fi
 
 if [[ "$confirm" =~ ^[Yy]$ ]]; then
     echo "==> Parando containers Docker..."
