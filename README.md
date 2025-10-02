@@ -20,7 +20,7 @@ Antes da instalação, você pode executar a limpeza total da VM:
 
 ➡️ O script vai perguntar se você deseja **apagar tudo** (containers, imagens, volumes, Nginx e apps antigas).  
 
-- Se **responder SIM (y)** → sua VM ficará **zerada** (modo "virgem") e você precisará **reclonar o repositório**:
+- Se **responder SIM (y)** → sua VM ficará **completamente zerada** (modo "virgem") e você precisará **reclonar o repositório**:
 
 ```bash
 git clone https://github.com/MnuelD/devops-toolkit.git
@@ -57,6 +57,14 @@ sudo actions/setup.sh
 ```
 
 ---
+
+## habilitar Portas 
+- **nginx**: sudo ufw allow 80/tcp
+- **mysql**: sudo ufw allow 3306/tcp
+- **grafana**: sudo ufw allow 3000/tcp
+- **prometheus**: sudo ufw allow 9090/tcp
+
+
 
 ## 📊 Serviços disponíveis
 - **Nginx:** http://localhost:80  
