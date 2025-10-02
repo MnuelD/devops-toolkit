@@ -31,9 +31,11 @@ if [[ "$confirm" =~ ^[Yy]$ ]]; then
 
     echo "==> Limpando diretórios de aplicações antigas..."
     sudo rm -rf /var/www/*
-    sudo rm -rf ~/devops-toolkit
 
     echo "==> VM limpa com sucesso!"
+    echo "👉 Se a limpeza foi completa, reclone o repositório:"
+    echo "   git clone https://github.com/MnuelD/devops-toolkit.git && cd devops-toolkit && sudo actions/setup.sh"
 else
     echo "==> Limpeza cancelada. Continuando com a instalação..."
+    sudo actions/setup.sh
 fi

@@ -15,5 +15,5 @@ jobs:
 
       - name: Testar scripts
         run: |
-          bash cleanup.sh
-          bash setup.sh
+          bash actions/cleanup.sh
+          bash actions/setup.sh

@@ -14,24 +14,41 @@ Automação completa para configurar rapidamente **Docker + Nginx + MySQL/MariaD
 ## 🧹 Passo 1: Limpeza (opcional)
 Antes da instalação, você pode executar a limpeza total da VM:
 
+➡️ O script vai perguntar se você deseja **apagar tudo** (containers, imagens, volumes, Nginx e apps antigas).  
+
+- Se **responder SIM (y)** → sua VM ficará **zerada** (modo "virgem") e você precisará **reclonar o repositório**:
+
 ```bash
-chmod +x cleanup.sh
-./cleanup.sh
+git clone https://github.com/MnuelD/devops-toolkit.git
+cd devops-toolkit
+chmod +x actions/cleanup.sh
+sudo actions/cleanup.sh
 ```
 
-➡️ O script vai perguntar se você deseja **apagar tudo** (containers, imagens, volumes, Nginx e apps antigas).  
-Se não quiser, pode pular e ir direto para a instalação.
+Após a limpeza total, reclone e rode o setup:
+
+```bash
+git clone https://github.com/MnuelD/devops-toolkit.git
+cd devops-toolkit
+chmod +x actions/setup.sh
+sudo actions/setup.sh
+```
+
+- Se **responder NÃO (n)** → ele pula a limpeza completa, remove apenas o essencial e segue direto para o `setup`:
+
+```bash
+chmod +x actions/setup.sh
+sudo actions/setup.sh
+```
 
 ---
 
 ## 🚀 Passo 2: Instalar stack completa
-Clone o repositório e execute o setup:
+Se já estiver no repositório e não quiser limpar, basta executar:
 
 ```bash
-git clone https://github.com/seu-usuario/devops-toolkit.git
-cd devops-toolkit
-chmod +x setup.sh
-./setup.sh
+chmod +x actions/setup.sh
+sudo actions/setup.sh
 ```
 
 ---
