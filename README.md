@@ -2,6 +2,10 @@
 
 Automação completa para configurar rapidamente **Docker + Nginx + MySQL/MariaDB + Prometheus + Grafana** em uma VM Linux.
 
+## ✨ Autor
+**Desenvolvido por Manuel Dala**  
+Aproveitem esta ferramenta e compartilhem com a comunidade DevOps 🚀
+
 ---
 
 ## 📦 Pré-requisitos
@@ -22,6 +26,7 @@ Antes da instalação, você pode executar a limpeza total da VM:
 git clone https://github.com/MnuelD/devops-toolkit.git
 cd devops-toolkit
 chmod +x actions/cleanup.sh
+chmod +x actions/setup.sh
 sudo actions/cleanup.sh
 ```
 
@@ -63,6 +68,3 @@ sudo actions/setup.sh
 
 ---
 
-## ✨ Autor
-**Desenvolvido por Manuel Dala**  
-Aproveitem esta ferramenta e compartilhem com a comunidade DevOps 🚀
