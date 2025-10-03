@@ -54,7 +54,7 @@ if [[ "$usar_telegram" == "y" ]]; then
     fi
 
     echo "==> Gerando configuração dinâmica do Alertmanager..."
-    sed "s|__BOT_TOKEN__|$BOT_TOKEN|g; s|__CHAT_ID__|$CHAT_ID|g" alertmanager.yml.template > alertmanager.yml
+    sed "s|__BOT_TOKEN__|$BOT_TOKEN|g; s|__CHAT_ID__|$CHAT_ID|g" alertmanager.yml > alertmanager.yml
 else
     echo "⚠️  Telegram desativado. Criando config padrão sem integração."
     sed "s|__BOT_TOKEN__|FAKE_TOKEN|g; s|__CHAT_ID__|0000|g" alertmanager.yml.template > alertmanager.yml
