@@ -1,0 +1,12 @@
+
+global:
+  resolve_timeout: 5m
+
+route:
+  receiver: 'telegram-alert'
+
+receivers:
+  - name: 'telegram-alert'
+    telegram_configs:
+      - bot_token: '8157000952:AAEeUkjLARquhj9B0zCuYdl1g6xJt9Rg-to'
+        chat_id: '<SEU_CHAT_ID>'

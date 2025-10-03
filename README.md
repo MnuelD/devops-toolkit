@@ -67,10 +67,12 @@ sudo actions/setup.sh
 
 
 ## 📊 Serviços disponíveis
-- **Nginx:** http://localhost:80  
-- **Grafana:** http://localhost:3000 (admin / admin)  
-- **Prometheus:** http://localhost:9090  
-- **MySQL/MariaDB:** porta `3306`  
+- Nginx: http://<IP-DA-SUA-VM>:80
+- Grafana: http://<IP-DA-SUA-VM>:3000 (admin/admin)
+- Prometheus: http://<IP-DA-SUA-VM>:9090
+- Jenkins: http://<IP-DA-SUA-VM>:8080 (admin/admin)
+- Alertmanager: http://<IP-DA-SUA-VM>:9093
+- MySQL/MariaDB: porta 3306  
 
 💡 Assim que instalar o Grafana e Prometheus, você já pode monitorar métricas da própria VM como **memória, disco, rede e requisições**.
 
