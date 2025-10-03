@@ -1,0 +1,75 @@
+{
+  "id": null,
+  "title": "Node Exporter - Basic Dashboard",
+  "tags": [
+    "system",
+    "basic",
+    "monitoring"
+  ],
+  "timezone": "browser",
+  "schemaVersion": 36,
+  "version": 1,
+  "refresh": "30s",
+  "panels": [
+    {
+      "type": "graph",
+      "title": "CPU Usage (%)",
+      "targets": [
+        {
+          "expr": "100 - (avg by (instance) (rate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
+          "legendFormat": "{{instance}}",
+          "interval": ""
+        }
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "Memory Usage (%)",
+      "targets": [
+        {
+          "expr": "(1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100",
+          "legendFormat": "{{instance}}",
+          "interval": ""
+        }
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "Disk Usage (%)",
+      "targets": [
+        {
+          "expr": "(node_filesystem_size_bytes{fstype!=\"tmpfs\"} - node_filesystem_free_bytes{fstype!=\"tmpfs\"}) / node_filesystem_size_bytes{fstype!=\"tmpfs\"} * 100",
+          "legendFormat": "{{instance}}",
+          "interval": ""
+        }
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "Network Traffic (RX/TX)",
+      "targets": [
+        {
+          "expr": "rate(node_network_receive_bytes_total[5m])",
+          "legendFormat": "RX - {{instance}}",
+          "interval": ""
+        },
+        {
+          "expr": "rate(node_network_transmit_bytes_total[5m])",
+          "legendFormat": "TX - {{instance}}",
+          "interval": ""
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Uptime (seconds)",
+      "targets": [
+        {
+          "expr": "node_time_seconds - node_boot_time_seconds",
+          "legendFormat": "{{instance}}",
+          "interval": ""
+        }
+      ]
+    }
+  ]
+}

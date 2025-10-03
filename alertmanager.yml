@@ -1,12 +1,16 @@
-
 global:
   resolve_timeout: 5m
 
 route:
-  receiver: 'telegram-alert'
+  receiver: 'telegram'
 
 receivers:
-  - name: 'telegram-alert'
+  - name: 'telegram'
     telegram_configs:
-      - bot_token: '8157000952:AAEeUkjLARquhj9B0zCuYdl1g6xJt9Rg-to'
-        chat_id: '<SEU_CHAT_ID>'
+      - bot_token: "__BOT_TOKEN__"
+        chat_id: "__CHAT_ID__"
+        message: |
+          🚨 Alerta do Prometheus 🚨
+          *{{ .CommonLabels.alertname }}*
+          Severity: {{ .CommonLabels.severity }}
+          Description: {{ .CommonAnnotations.description }}
